@@ -1,0 +1,54 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:fontFamily">@font/ocr_a_std_regular</item>
+        <item name="actionBarTheme">@style/AppTheme.ActionBarTheme</item>
+
+    </style>
+
+    <style name="AppTheme.ActionBarTheme">
+        <item name="android:fontFamily">@font/aox_regular</item>
+        <item name="android:textAllCaps">true</item>
+        <!--item name="android:textAlignment">center</item-->
+        <!--item name="android:textColor">@color/colorPink</item-->
+    </style>
+
+    <style name="AppTheme.Intro">
+        <item name="android:textColor">@color/colorText</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorBackground</item>
+    </style>
+
+    <style name="AppTheme.TextColor">
+        <item name="android:textColor">@color/colorText</item>
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="android:textColor">@color/colorText</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="my_workout_items" parent="@android:style/Widget.TextView">
+        <item name="android:fontFamily">@font/ocr_a_std_regular</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_margin">32dp</item>
+        <item name="android:layout_marginStart">64dp</item>
+    </style>
+
+
+</resources>

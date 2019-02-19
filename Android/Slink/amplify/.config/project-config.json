@@ -1,0 +1,16 @@
+{
+    "projectName": "Slink",
+    "projectPath": "C:\\Users\\ledangaravi\\Stuff\\Programming\\AndroidStudioProjects\\Slink",
+    "defaultEditor": "sublime",
+    "frontendHandler": {
+        "android": "C:\\Users\\ledangaravi\\AppData\\Roaming\\npm\\node_modules\\@aws-amplify\\cli\\node_modules\\amplify-frontend-android"
+    },
+    "amplify-frontend-android": {
+        "config": {
+            "ResDir": "app/src/main/res"
+        }
+    },
+    "providers": {
+        "awscloudformation": "C:\\Users\\ledangaravi\\AppData\\Roaming\\npm\\node_modules\\@aws-amplify\\cli\\node_modules\\amplify-provider-awscloudformation"
+    }
+}
