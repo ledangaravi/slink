@@ -1,0 +1,63 @@
+PODS:
+  - AWSAuthCore (2.6.35):
+    - AWSCore (= 2.6.35)
+  - AWSAuthUI (2.6.35):
+    - AWSAuthCore (= 2.6.35)
+    - AWSCore (= 2.6.35)
+  - AWSCognitoIdentityProvider (2.6.35):
+    - AWSCognitoIdentityProviderASF (= 1.0.1)
+    - AWSCore (= 2.6.35)
+  - AWSCognitoIdentityProviderASF (1.0.1)
+  - AWSCore (2.6.35)
+  - AWSDynamoDB (2.6.35):
+    - AWSCore (= 2.6.35)
+  - AWSMobileClient (2.6.35):
+    - AWSAuthCore (= 2.6.35)
+  - AWSUserPoolsSignIn (2.6.35):
+    - AWSAuthCore (= 2.6.35)
+    - AWSCognitoIdentityProvider (= 2.6.35)
+  - Charts (3.2.1):
+    - Charts/Core (= 3.2.1)
+  - Charts/Core (3.2.1)
+  - CocoaAsyncSocket (7.6.3)
+  - CocoaMQTT (1.1.3):
+    - CocoaAsyncSocket (~> 7.6.3)
+
+DEPENDENCIES:
+  - AWSAuthUI (~> 2.6.13)
+  - AWSDynamoDB (~> 2.6.13)
+  - AWSMobileClient (~> 2.6.13)
+  - AWSUserPoolsSignIn (~> 2.6.13)
+  - Charts
+  - CocoaMQTT
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AWSAuthCore
+    - AWSAuthUI
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
+    - AWSCore
+    - AWSDynamoDB
+    - AWSMobileClient
+    - AWSUserPoolsSignIn
+    - Charts
+    - CocoaAsyncSocket
+    - CocoaMQTT
+
+SPEC CHECKSUMS:
+  AWSAuthCore: 386e045a341acebf2409425467e907ae1a45ed63
+  AWSAuthUI: 55b403e6f2ad010730c4dfa56b0eb96b041fce4c
+  AWSCognitoIdentityProvider: 0a041bd229a105d73f3a4d7eb90f696f1b5bd422
+  AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
+  AWSCore: 2dab62ef2e5ca5d8c72c6cbdb3a6ea1532c27c2b
+  AWSDynamoDB: f4902fc37384dcf9547e2d8a32a5b208d4d1d996
+  AWSMobileClient: f89a36e0d95fc354a9d3b50d347371788c542449
+  AWSUserPoolsSignIn: cf3293cf2c423922e628082a9b09e77473afc8b0
+  Charts: f122fb70b19847fa5817d018b77d6c5a2296ab25
+  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
+  CocoaMQTT: b506d38ad3bbe1c55a4f8ee8c9fd02c35da1a7d8
+
+PODFILE CHECKSUM: e2255591d639cde9949cc78ae5d6f1a920c94416
+
+COCOAPODS: 1.5.3

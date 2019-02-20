@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddSetCell" rowHeight="60" id="KGk-i7-Jjw" customClass="createExerciseTableViewCell" customModule="SLINK" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgu-s5-egt">
+                        <rect key="frame" x="16" y="11" width="22" height="22"/>
+                        <connections>
+                            <action selector="addset1:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nC0-Ru-uBM"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbp-lb-EM5">
+                        <rect key="frame" x="50" y="7" width="53" height="30"/>
+                        <state key="normal" title="Add set"/>
+                        <connections>
+                            <action selector="addset2:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qEB-qA-wgY"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Vgu-s5-egt" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8ZO-RO-cLG"/>
+                    <constraint firstItem="lbp-lb-EM5" firstAttribute="leading" secondItem="Vgu-s5-egt" secondAttribute="trailing" constant="12" id="KI6-3O-WIs"/>
+                    <constraint firstItem="Vgu-s5-egt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="heA-sc-AOi"/>
+                    <constraint firstItem="lbp-lb-EM5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kfD-R4-dfe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addSet" destination="lbp-lb-EM5" id="lfY-4G-zt4"/>
+                <outlet property="addSetButton" destination="Vgu-s5-egt" id="db5-x3-DFu"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="154.72263868065968"/>
+        </tableViewCell>
+    </objects>
+</document>

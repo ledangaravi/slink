@@ -1,0 +1,6 @@
+framework module Pods_SLINKUITests {
+  umbrella header "Pods-SLINKUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

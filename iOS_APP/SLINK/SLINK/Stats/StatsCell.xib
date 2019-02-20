@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OCR A Std Regular.ttf">
+            <string>OCRAStd</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="statcell" rowHeight="741" id="KGk-i7-Jjw" customClass="StatsCell" customModule="SLINK" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="741"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="740.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQX-DO-def" customClass="LineChartView" customModule="Charts">
+                        <rect key="frame" x="0.0" y="121" width="375" height="220"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="220" id="oRM-fe-yhl"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ExerciseTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="er3-XH-Pah">
+                        <rect key="frame" x="94" y="43" width="187.5" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="ifa-TB-now"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="OCRAStd" family="OCR A Std" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQg-7n-5Fz" customClass="LineChartView" customModule="Charts">
+                        <rect key="frame" x="0.0" y="396" width="375" height="220"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="220" id="fyo-7g-PaZ"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed (Reps per minute)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlE-f4-o2K">
+                        <rect key="frame" x="15" y="372" width="282" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="Cja-yd-WbL"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="OCRAStd" family="OCR A Std" pointSize="17"/>
+                        <color key="textColor" red="0.99215686274509807" green="0.16470588235294117" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Force (KG)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvB-xF-KNf">
+                        <rect key="frame" x="15" y="97" width="123" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="Mcd-QE-z2b"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="OCRAStd" family="OCR A Std" pointSize="17"/>
+                        <color key="textColor" red="0.99607843137254903" green="0.9882352941176471" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback: Pulling too fast. If this exercise seems too easy, add weight and reps." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="288" translatesAutoresizingMaskIntoConstraints="NO" id="Jch-5E-2qA">
+                        <rect key="frame" x="16" y="646" width="343" height="61"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="61" id="zbd-gv-bod"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="OCRAStd" family="OCR A Std" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.66666666669999997" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="FQg-7n-5Fz" secondAttribute="trailing" id="0nM-sN-cqb"/>
+                    <constraint firstItem="FQg-7n-5Fz" firstAttribute="top" secondItem="nlE-f4-o2K" secondAttribute="bottom" id="3io-av-Ciw"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Jch-5E-2qA" secondAttribute="bottom" constant="23" id="6eO-Fd-D8X"/>
+                    <constraint firstItem="Jch-5E-2qA" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="7ck-N5-zBC"/>
+                    <constraint firstItem="er3-XH-Pah" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="AR6-DL-ysJ"/>
+                    <constraint firstItem="er3-XH-Pah" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="12" id="Bbm-2e-og0"/>
+                    <constraint firstItem="Jch-5E-2qA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="K6S-Bj-2bo"/>
+                    <constraint firstItem="WQX-DO-def" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KvS-OV-fxC"/>
+                    <constraint firstItem="Jch-5E-2qA" firstAttribute="top" secondItem="FQg-7n-5Fz" secondAttribute="bottom" constant="30" id="M6T-d5-WBD"/>
+                    <constraint firstItem="nlE-f4-o2K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Vop-A3-ejd"/>
+                    <constraint firstItem="pvB-xF-KNf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ajW-rY-Gqe"/>
+                    <constraint firstItem="nlE-f4-o2K" firstAttribute="top" secondItem="WQX-DO-def" secondAttribute="bottom" constant="31" id="f0C-W3-nKk"/>
+                    <constraint firstItem="FQg-7n-5Fz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jJV-Gv-ke5"/>
+                    <constraint firstAttribute="trailing" secondItem="WQX-DO-def" secondAttribute="trailing" id="qGW-D3-OCy"/>
+                    <constraint firstItem="WQX-DO-def" firstAttribute="top" secondItem="pvB-xF-KNf" secondAttribute="bottom" id="qH2-kv-o8F"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.67000000000000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <accessibility key="accessibilityConfiguration">
+                <accessibilityTraits key="traits" notEnabled="YES"/>
+            </accessibility>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="chart1View" destination="WQX-DO-def" id="rl5-hC-qac"/>
+                <outlet property="chart2View" destination="FQg-7n-5Fz" id="g6d-Yd-YmA"/>
+                <outlet property="exerciseTitle" destination="er3-XH-Pah" id="vYT-gG-ImM"/>
+            </connections>
+            <point key="canvasLocation" x="120.8" y="235.23238380809596"/>
+        </tableViewCell>
+    </objects>
+</document>
