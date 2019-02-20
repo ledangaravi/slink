@@ -34,12 +34,7 @@ import static com.ledangaravi.slink.MainActivity.myWorkouts;
 public class EnjoyActivity extends AppCompatActivity {
     private static final int BARCODE_READER_ACTIVITY_REQUEST = 1208;
 
-    MqttHelper mqttHelper;
-
-    //public static boolean defaultWod = true;
-
     public static String deviceID = "defaultDevice";
-    public static String wodName = "Random WOD";
 
 
     @Override
@@ -56,30 +51,6 @@ public class EnjoyActivity extends AppCompatActivity {
         textView.setVisibility(View.INVISIBLE);
         button.setVisibility(View.INVISIBLE);
 
-        mqttHelper = new MqttHelper(getApplicationContext());
-        mqttHelper.setCallback(new MqttCallbackExtended() {
-            @Override
-            public void connectComplete(boolean reconnect, String serverURI) {
-                //mqttHelper.subscribe();
-            }
-
-            @Override
-            public void connectionLost(Throwable cause) {
-                Toast.makeText(getApplicationContext(), R.string.mqtt_toast_disconnected, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void messageArrived(String topic, MqttMessage message) throws Exception {
-                //Toast.makeText(getApplicationContext(),message.toString(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void deliveryComplete(IMqttDeliveryToken token) {
-
-            }
-        });
-
-
         Intent launchIntent = BarcodeReaderActivity.getLaunchIntent(this, true, false);
         startActivityForResult(launchIntent, BARCODE_READER_ACTIVITY_REQUEST);
 
@@ -89,6 +60,9 @@ public class EnjoyActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                //todo get correct WOD
+
+                //get a demo WOD
                 WODDO wodItem = dynamoDBMapper.load(WODDO.class,"slink", "Demo");
 
                 final DEVICESDO devicesItem = new DEVICESDO();
@@ -101,39 +75,6 @@ public class EnjoyActivity extends AppCompatActivity {
                 devicesItem.setWList(wodItem.getWList());
 
                 dynamoDBMapper.save(devicesItem);
-
-                List<String> exL =  wodItem.getExList();
-                List<String> repL = wodItem.getRepList();
-                List<String> wL = wodItem.getWList();
-
-
-                ArrayList<String> exList = new ArrayList<>();
-                ArrayList<String> repList = new ArrayList<>();
-                ArrayList<String> wList = new ArrayList<>();
-//todo finish
-                for(int i = 0; i < exL.size(); i++){
-                    exL.add(exList.get(i));
-                }
-
-
-                JSONObject json = new JSONObject();
-                try {
-
-                    json.put("device_ID", deviceID);
-                    json.put("u_name", username);
-                    json.put("WOD_name", wodItem.getWODName());
-                    json.put("exList", wodItem.getExList());
-                    json.put("repList",wodItem.getRepList());
-                    json.put("wList",wodItem.getWList());
-
-                } catch (JSONException e) {
-                    Log.e("MYAPP", "unexpected JSON exception", e);
-                    // Do something to recover ... or kill the app.
-                }
-
-                mqttHelper.publishTopic = "slink/devices/"+deviceID;
-                mqttHelper.payload = json;
-                mqttHelper.publish();
 
             }
         }).start();
@@ -167,6 +108,7 @@ public class EnjoyActivity extends AppCompatActivity {
             textView.setVisibility(View.VISIBLE);
             button.setVisibility(View.VISIBLE);
 
+            //check if a valid device ID, needs to contain "slink"
             if(barcode.rawValue.toLowerCase().contains("slink")){
                 deviceID = barcode.rawValue;
                 submitWOD();

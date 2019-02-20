@@ -45,17 +45,21 @@ public class IntroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
+        //check the last logged in user
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         String defaultValue = "";
         String lastUser = sharedPref.getString(getString(R.string.user_KEY), defaultValue);
 
+        //get the current user
         CognitoUserPool userpool = new CognitoUserPool(IntroActivity.this, new AWSConfiguration(IntroActivity.this));
         username = userpool.getCurrentUser().getUserId();
 
         if(username.equals(lastUser)){
+            //if same user as last time don't display tutorial, move on to main screen
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }else{
+            //updated the stored username
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putString(getString(R.string.user_KEY), username);
             editor.apply();
@@ -67,7 +71,6 @@ public class IntroActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(false);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        //findViewById(R.id.toolbar).setVisibility(View.GONE);
 
 
         // Create the adapter that will return a fragment for each of the three
@@ -93,7 +96,10 @@ public class IntroActivity extends AppCompatActivity {
     }
 
 
-    /*@Override
+    /*
+    removed because no action bar is displayed
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_intro, menu);
