@@ -1,5 +1,10 @@
 #! /usr/bin/env python3
 
+# Script to test load cell/ADC
+#
+# 2019 Tomasz Bialas
+
+
 import sensor
 import time
 

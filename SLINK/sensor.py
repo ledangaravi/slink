@@ -1,4 +1,8 @@
+#
 # Library to access ADS1115 ADC to use the load cell
+#
+# 2019 Tomasz Bialas
+#
 
 class LoadSensor():
     import smbus
@@ -51,7 +55,7 @@ class LoadSensor():
         value = 0
         for i in range(100):
             value += self.get_sample()
-            time.sleep(0.01)
+            self.time.sleep(0.01)
         average = value/100
 
         self.cal_offset = int(average)

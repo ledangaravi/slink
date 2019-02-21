@@ -1,11 +1,10 @@
-#############################################################
 # Original file from SunFounder EMO library
 #
 # https://github.com/sunfounder/SunFounder_LED_Matrix.git
 #
 # Modified to add functions
+# 2019 Tomasz Bialas
 #
-#############################################################
 
 class _Basic_class(object):
     import logging

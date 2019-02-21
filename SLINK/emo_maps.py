@@ -1,9 +1,9 @@
-###########################################################
 # Original file emo_maps.py from SunFounder EMO library
 # https://github.com/sunfounder/SunFounder_LED_Matrix.git
 #
 # Modified: added numbers and symbols
-###########################################################
+# 2019 Tomasz Bialas
+#
 
 
 
