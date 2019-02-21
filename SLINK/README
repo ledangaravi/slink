@@ -1,17 +1,17 @@
 This folder contains the code running on the SLINK device.
 
-###
+====
 slink.py is the main application, launched at startup
 with an entry in /etc/rc.local
 
 su pi -c '/home/pi/SLINK/slink.py'
 
-###
+===
 
 sensor.py is a library written to make I2C access to the ADC
 easier
 
-###
+===
 
 emo.py and emo_maps.py are part of the SunFounder Emo display
 library available at https://github.com/sunfounder/SunFounder_Emo
@@ -21,9 +21,13 @@ bar, and additional characters were added to emo_maps.py
 
 SunFounder Emo library original code is licensed under GPL
 
-###
+===
 
 tests/ contains short scripts to test hardware for debugging
 
-###
+===
+
+ip.py is a script launched at boot to periodically update
+the AWS IoT device shadow to keep track of the local IP
+address of the device
 
