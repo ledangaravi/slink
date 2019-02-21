@@ -1,4 +1,7 @@
+//start a workout and display: "enjoy your workout" message
+
 package com.ledangaravi.slink;
+
 
 import android.app.Activity;
 import android.content.Intent;

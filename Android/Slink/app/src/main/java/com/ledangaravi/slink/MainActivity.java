@@ -51,32 +51,17 @@ public class MainActivity extends AppCompatActivity {
         // my wods button
         Snackbar.make(view, "Coming soon", Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
-        //Intent intent = new Intent(this, MyWorkoutsActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, MyWorkoutsActivity.class);
+        startActivity(intent);
     }
     public void stats(View view) {
         // stats button
         Snackbar.make(view, "Coming soon", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-        Intent intent = new Intent(this, TestActivity.class);
-        startActivity(intent);
-    }
-
-    public void startSetup(View view) {
-        // Do something in response to button
-        Intent intent = new Intent(this, SetupActivity.class);
-        startActivity(intent);
     }
 
     public void signOut(View view) {
         IdentityManager.getDefaultIdentityManager().signOut();
     }
-
-
-    public void startHistory(View view){
-        Intent intent = new Intent(this, HistoryActivity.class);
-        startActivity(intent);
-    }
-
 
 
     void getDefaultWOD(){

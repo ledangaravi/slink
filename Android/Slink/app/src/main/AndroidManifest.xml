@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
+    <!-- todo App is not indexable by Google Search; consider adding at least one Activity with an ACTION-VIEW intent filter. -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_logo"
@@ -14,9 +15,6 @@
         android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".TestActivity"
-            android:theme="@style/AppTheme.TextColor"></activity>
         <activity
             android:name=".MyWorkoutsActivity"
             android:label="@string/title_activity_my_workouts"
@@ -27,14 +25,17 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ledangaravi.slink.MainActivity" />
         </activity>
+
         <activity
             android:name=".EnjoyActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".IntroActivity"
             android:label="@string/title_activity_intro"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Intro" />
+
         <activity
             android:name=".AuthenticatorActivity"
             android:screenOrientation="portrait"
@@ -46,43 +47,13 @@
             </intent-filter>
         </activity>
 
-        <service android:name="org.eclipse.paho.android.service.MqttService" />
-
-        <activity
-            android:name=".HistoryActivity"
-            android:label="@string/title_activity_history"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.ledangaravi.slink.MainActivity" />
-        </activity>
-        <activity
-            android:name=".SetupActivity"
-            android:label="@string/title_activity_setup"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.TextColor">
-
-            <!-- The meta-data tag is required if you support API level 15 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-
-            <!--
-            intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter
-            -->
         </activity>
+
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
     </application>
 
 </manifest>
