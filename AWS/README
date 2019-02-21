@@ -1,0 +1,16 @@
+This directory contains AWS backend components, sorted by AWS service
+
+Lambda/ contains the Lambda scripts triggered on database change, the
+configuration YAML for the function, and the IAM policy for the lambda
+function
+
+IoTCore/ contains the IoT device IAM access policy to the broker/IoTCore
+services, and a screenshot of the device entry and shadow, and a screen-
+shot to the Act rule for parsing the MQTT messages to the database
+
+DynamoDB/ contains a screenshot of the main database screen showing the
+tables in use
+
+MobileHub/ contains data on the app API access
+
+

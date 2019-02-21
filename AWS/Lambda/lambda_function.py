@@ -1,3 +1,9 @@
+#
+# Amazon Lambda function to respond at database change
+# and upload workout configuration to device
+# 
+# 2019 Tomasz Bialas
+#
 
 import json
 import boto3
