@@ -1,3 +1,4 @@
+//list of my workouts, currently only loads the default, excluded from the app
 package com.ledangaravi.slink;
 
 import android.os.Bundle;
@@ -8,12 +9,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
-import com.amazonaws.models.nosql.WODDO;
-
-
 
 
 public class MyWorkoutsActivity extends AppCompatActivity {
@@ -55,7 +50,7 @@ public class MyWorkoutsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         // specify an adapter (see also next example)
-        mAdapter = new MyAdapter(MainActivity.myWorkouts);
+        mAdapter = new MyWorkoutsAdapter(MainActivity.myWorkouts);
         recyclerView.setAdapter(mAdapter);
 
     }

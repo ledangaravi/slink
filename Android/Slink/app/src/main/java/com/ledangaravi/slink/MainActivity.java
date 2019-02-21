@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         // my wods button
         Snackbar.make(view, "Coming soon", Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
-        Intent intent = new Intent(this, MyWorkoutsActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, MyWorkoutsActivity.class);
+        //startActivity(intent);
     }
     public void stats(View view) {
         // stats button

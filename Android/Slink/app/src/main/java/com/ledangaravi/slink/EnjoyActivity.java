@@ -7,7 +7,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,23 +15,12 @@ import android.widget.Toast;
 
 
 import com.amazonaws.models.nosql.DEVICESDO;
-import com.amazonaws.models.nosql.NewsDO;
 import com.amazonaws.models.nosql.WODDO;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.notbytes.barcode_reader.BarcodeReaderActivity;
 
-import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
-import org.eclipse.paho.client.mqttv3.MqttCallbackExtended;
-import org.eclipse.paho.client.mqttv3.MqttMessage;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import static com.ledangaravi.slink.AuthenticatorActivity.dynamoDBMapper;
 import static com.ledangaravi.slink.IntroActivity.username;
-import static com.ledangaravi.slink.MainActivity.myWorkouts;
 
 public class EnjoyActivity extends AppCompatActivity {
     private static final int BARCODE_READER_ACTIVITY_REQUEST = 1208;
@@ -97,7 +85,7 @@ public class EnjoyActivity extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.enjoy_button);
 
         if (resultCode != Activity.RESULT_OK) {
-            Toast.makeText(this, R.string.setup_scan_fail, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.qr_scan_fail, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             return;

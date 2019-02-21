@@ -1,3 +1,4 @@
+//tutorial activity
 package com.ledangaravi.slink;
 
 import android.content.Context;

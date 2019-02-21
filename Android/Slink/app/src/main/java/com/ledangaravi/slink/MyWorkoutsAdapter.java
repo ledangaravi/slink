@@ -12,7 +12,7 @@ import com.amazonaws.models.nosql.WODDO;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+public class MyWorkoutsAdapter extends RecyclerView.Adapter<MyWorkoutsAdapter.MyViewHolder> {
     private String[] mDataset;
 
     // Provide a reference to the views for each data item
@@ -27,7 +27,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.d(TAG, "Element " + getAdapterPosition() + " clicked.");
+                    //Log.d(TAG, "Element " + getAdapterPosition() + " clicked.");
                 }
             });
             textView = v;
@@ -35,17 +35,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(PaginatedList<WODDO> myWorkouts) {
+    public MyWorkoutsAdapter(PaginatedList<WODDO> myWorkouts) {
         mDataset = new String[myWorkouts.size()];
         for(int i = 0; i < myWorkouts.size(); i++){
             mDataset[i] = myWorkouts.get(i).getWODName();
         }
-        //mDataset = myDataset;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public MyAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyWorkoutsAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
         TextView v = (TextView) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.text_row_item, parent, false);
