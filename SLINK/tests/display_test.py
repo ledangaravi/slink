@@ -1,5 +1,10 @@
 #! /usr/bin/env python3
 
+# Script to test display
+# 
+# 2019 Tomasz Bialas
+
+
 import emo
 import time
 display = emo.Emo()

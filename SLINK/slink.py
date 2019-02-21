@@ -1,4 +1,13 @@
 #! /usr/bin/env python3
+
+# Main software of the SLINK device
+# Uses sensor.py library
+# Uses paho-mqtt, modified SunFounder Emo 3rd party libraries
+# 
+# 2019 Tomasz Bialas
+#
+
+
 import sys
 import sensor
 import emo
@@ -8,6 +17,8 @@ import json
 import time
 import datetime
 
+
+# Device configuration
 device_id = 1 # unique device ID
 rep_hysteresis = 15 # hysteresis to prevent false triggers
 samplerate = 32
@@ -20,10 +31,12 @@ mqtt_TX_topic = "SLINK/ExerciseData"
 log_format ='%(asctime)s [%(levelname)s] %(message)s'
 loglevel = logging.INFO # set to logging.DEBUG for debug messages
 
+# SSL certificates paths
 ca_file = "/usr/share/ca-certificates/amazon/AmazonRootCA1.pem"
 cert = "/home/pi/certificates/amazon_eu-west-2/4e9dca8ad1-certificate.pem.crt"
 private = "/home/pi/certificates/amazon_eu-west-2/4e9dca8ad1-private.pem.key"
 
+# Global varuables to be modified from callbacks
 workout_received = False
 RXmsg = ""
 connected = False
