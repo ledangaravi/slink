@@ -21,7 +21,7 @@ import datetime
 # Device configuration
 device_id = 1 # unique device ID
 rep_hysteresis = 15 # hysteresis to prevent false triggers
-samplerate = 32
+samplerate = 32 # set to 16, 32, 64, 128, 250, 475, 860
 calibration_constant = 0.0625 # calibration constant to get weight in grams; load cell output is linear
 mqtt_clientID = "SLINK{0}".format(device_id)
 aws_iot_endpoint = "a225r00pw7qoxz-ats.iot.eu-west-2.amazonaws.com"
@@ -178,6 +178,7 @@ def main():
 
             # loop for each repetition in exercise
             for rep in range(int(repList[exercise])):
+                repdisp = rep # rep count to be displayed. user sees count increment on high edge, before rep counter increases
                 rep_maxval = 0 # peak value
                 rep_duration = time.time() # start of workout
                 rep_triggerHI = False # rising edge of repetition detected
@@ -185,27 +186,30 @@ def main():
                 rep_total = int(repList[exercise]) # total amount of repetitions
                 rep_threshold = int(wList[exercise])*calibration_constant*1000/3 # threshold (in g) to trigger at; depends on selected weight (in kg) and the calibration value
                                                                             #/3 added to make pulling easier for demo purposes, and prevent breaking the prototype
+                rep_threshold_LOW = int(rep_threshold / 4)
 
                 while (rep_triggerHI == False or rep_triggerLO == False):
+                    
                     sample = loadcell.get_sample()
-                    if (sample <= 0):
+                    if (sample <= 0): # don't register if user is pushing instead of pulling (?)
                         sample = 0
                     logger.debug("sample {0}".format(sample))
                     logger.debug(sample/rep_threshold)
 
                     # display force graph, amount of reps done out of total
-                    display.show_progressbar_with_text(abs(sample/rep_threshold), "{0}/{1}    ".format(str(rep), str(rep_total)))
+                    display.show_progressbar_with_text(abs(sample/rep_threshold), "{0}/{1}    ".format(str(repdisp), str(rep_total)))
                     
                     # detect successful rep
                     if (rep_triggerHI == True and rep_triggerLO == False):
                         if (sample >= rep_maxval):
                             rep_maxval = sample
                     
-                    if (rep_triggerHI == False and sample >= (rep_threshold + rep_hysteresis)):
+                    if (rep_triggerHI == False and sample >= rep_threshold):
                         logger.debug("NEW REP: rising edge")
                         rep_triggerHI = True
+                        repdisp = repdisp + 1 # increment counter on display
 
-                    if (rep_triggerHI == True and sample <= (rep_threshold - rep_hysteresis)):
+                    if (rep_triggerHI == True and sample <= rep_threshold_LOW):
                         logger.debug("NEW REP: falling edge")
                         rep_triggerLO = True
 
