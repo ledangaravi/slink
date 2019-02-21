@@ -9,23 +9,23 @@ We are combining the fields of design and fitness engineering development. To ad
 SLINK can be used by anyone, from fitness beginners to fitness experts. Whatever your goal is SLINK is your personalised fitness solution to put your goals into effect.
 
 
-##Getting Started
+## Getting Started
 Connect your SLINK device to a power supply. Download our APP on the iOS Appstore or Google Play Store. Create an Account or Login. Select or Create a workout on the APP. Scan your SLINK ID on the device with the app. Follow the instructions on your SLINK Device. After you completed your workout check your stats on the App.  
 
-##Prerequisites
+## Prerequisites
 macOS to test run the iOS App on Xcode (currently only the iOS app guarantees full functionality )
 Power on SLINK
 
 Check the Document Fantastic_Files_And_Where_To_Find_Them.pdf to understand the git repo.
 
 
-##Built With
+## Built With
 * AWS -> DynamoDB, AWS IOT, Amazon Cognito, DynamoDB, Mobile Client,AWS LAmda
 * Xcode
 * Python
 
 
-##Authors
+## Authors
 * Daniel Varga
 * Tomasz Bialas
 * Xin Zhou
